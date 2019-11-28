@@ -1,0 +1,81 @@
+main {
+    background: black;
+    height: 640px;
+    width: 960px;
+    overflow: hidden;
+}
+
+body {
+    overflow: hidden;
+}
+
+html {
+    overflow: hidden;
+}
+
+.screen {
+	height: 640px;
+    width: 960px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 0;
+}
+
+/* CLOCK SCREEN */
+
+.digit {
+    position: absolute;
+    width: calc(960px/6);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    line-height: 640px;
+}
+
+.second {
+	color: #ff4663;
+}
+
+.minute {
+	/color: blue;
+}
+
+#h2 {
+    left: 160px;
+}
+
+#m1 {
+    left: calc(160px*2);
+}
+
+#m2 {
+    left: calc(160px*3);
+}
+
+#s1 {
+    left: calc(160px*4);
+}
+
+#s2 {
+    left: calc(160px*5);
+}
+
+.slideUp {
+    animation: slideUp 0.3s;
+}
+
+@keyframes slideUp {
+    from {
+        margin-top: 0;
+    }
+    to {
+        margin-top: -640px;
+    }
+}
+
+.digit h1, .digit h2 {
+    font-family: "Alata";
+	font-size: 470px;
+    width: 300px;
+    margin-left: -70px;
+    text-align: center;
+}
