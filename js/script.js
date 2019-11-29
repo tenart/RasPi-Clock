@@ -52,7 +52,7 @@ $(function() {
         hr: doubleDigit(date.getHours()),
         mn: doubleDigit(date.getMinutes()),
         sc: doubleDigit(date.getSeconds())
-    }
+    };
     
     $("#h1 h1").text(nonMilHr(time.hr).substring(0, 1));
     $("#h2 h1").text(nonMilHr(time.hr).substring(1, 2));
@@ -60,6 +60,11 @@ $(function() {
     $("#m2 h1").text(time.mn.substring(1, 2));
     $("#s1 h1").text(time.sc.substring(0, 1));
     $("#s2 h1").text(time.sc.substring(1, 2));
+    
+    $(".navButton").click(function() {
+        var offset = parseInt($(this).attr("data-screen")) * -960;
+        $("#slider").css("left", offset);
+    });
     
     setInterval( function() {
         date = new Date();

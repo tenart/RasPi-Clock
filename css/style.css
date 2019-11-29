@@ -1,3 +1,15 @@
+*:focus {
+    outline: none;
+}
+
+* {
+    user-select: none;
+}
+
+body {
+    overflow: hidden;
+}
+
 main {
     background: black;
     height: 640px;
@@ -5,12 +17,31 @@ main {
     overflow: hidden;
 }
 
-body {
-    overflow: hidden;
+nav {
+    position: absolute;
+    width: 960px;
+    text-align: center;
+    height: 90px;
+    line-height: 90px;
+    bottom: 30px;
 }
 
-html {
-    overflow: hidden;
+nav button {
+    height: 90px;
+    width: 90px;
+    margin: 0 15px;
+    border-radius: 100%;
+    background: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#slider {
+	height: 640px;
+    width: 1920px;
+    position: absolute;
+    transition: left 0.5s;
+    left: 0px;
 }
 
 .screen {
@@ -29,6 +60,7 @@ html {
     overflow-x: hidden;
     overflow-y: hidden;
     line-height: 640px;
+    box-shadow:  0 0 40px 0 rgba(0, 0, 0, 0.5);
 }
 
 .second {
@@ -74,7 +106,7 @@ html {
 
 .digit h1, .digit h2 {
     font-family: "Alata";
-	font-size: 470px;
+	font-size: 400px;
     width: 300px;
     margin-left: -70px;
     text-align: center;
