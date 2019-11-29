@@ -48,12 +48,6 @@ $(function() {
         sc: doubleDigit(date.getSeconds())
     };
     
-    var oldTime = {
-        hr: doubleDigit(date.getHours()),
-        mn: doubleDigit(date.getMinutes()),
-        sc: doubleDigit(date.getSeconds())
-    };
-    
     $("#h1 h1").text(nonMilHr(time.hr).substring(0, 1));
     $("#h2 h1").text(nonMilHr(time.hr).substring(1, 2));
     $("#m1 h1").text(time.mn.substring(0, 1));
@@ -61,7 +55,7 @@ $(function() {
     $("#s1 h1").text(time.sc.substring(0, 1));
     $("#s2 h1").text(time.sc.substring(1, 2));
     
-    $(".navButton").click(function() {
+    $(".navButton").mouseenter(function() {
         var offset = parseInt($(this).attr("data-screen")) * -960;
         $("#slider").css("left", offset);
     });
@@ -120,4 +114,10 @@ $(function() {
         setTimeout(function() {$("#s2").addClass("slideUp")}, 720);
         
     }, 1000)
+    
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather?zip=28278,us&appid=2e6bb27c5e37162babaa1296a7e15938", function(data) {
+    //data is the JSON string
+        console.log(data.description);
+    });
+
 })
