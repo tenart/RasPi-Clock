@@ -10,6 +10,8 @@ $(function() {
     function nonMilHr(input) {
         if(parseInt(input) > 12) {
             return doubleDigit(parseInt(input) - 12);
+        } else if(parseInt(input) == 0 ){
+            return "12";
         } else {
             return doubleDigit(input);
         }
@@ -115,14 +117,25 @@ $(function() {
         
     }, 1000)
     
-    var currentWeather;
+    var wData;
     
     $.getJSON("https://api.openweathermap.org/data/2.5/weather?zip=28278,us&units=imperial&appid=2e6bb27c5e37162babaa1296a7e15938", function(data) {
     //data is the JSON string
-        currentWeather = data;
-        console.log(currentWeather);
-        $("#weatherTemp").html(Math.round(parseFloat(currentWeather.main.temp)) + "<sup> &deg;F</sup>");
-        $("#weatherIcon").attr("src", "http://openweathermap.org/img/wn/" + currentWeather.weather[0].icon + "@2x.png");
+        wData = data;
+        console.log(wData);
+        $("#weatherTemp").html(Math.round(parseFloat(wData.main.temp)) + "<sup> &deg;F</sup>");
+        $("#weatherDesc").text(wData.weather[0].description);
+        $("#weatherIcon").attr("src", "http://openweathermap.org/img/wn/" + wData.weather[0].icon + "@2x.png");
     });
+    /*
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather?zip=28278,us&units=imperial&appid=2e6bb27c5e37162babaa1296a7e15938", function(data) {
+    //data is the JSON string
+        wData = data;
+        console.log(wData);
+        $("#weatherTemp").html(Math.round(parseFloat(wData.main.temp)) + "<sup> &deg;F</sup>");
+        $("#weatherDesc").text(wData.weather[0].description);
+        $("#weatherIcon").attr("src", "http://openweathermap.org/img/wn/" + wData.weather[0].icon + "@2x.png");
+    });
+    */
 
 })
