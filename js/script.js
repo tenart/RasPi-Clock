@@ -74,6 +74,11 @@ $(function() {
         
         //console.log(time.hr + ":" + time.mn + ":" + time.sc);
         
+        $("#wHour").text(nonMilHr(time.hr));
+        $("#wMin").text(time.mn);
+        $("#wSec").css("opacity", 0);
+        setTimeout(function() {$("#wSec").css("opacity", 1)}, 500)
+        
         $(".digit").removeClass("slideUp")
         
         

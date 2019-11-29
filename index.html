@@ -2,10 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Clock lol</title>
         <link type="text/css" rel="stylesheet" href="css/reset.css">
         <link type="text/css" rel="stylesheet" href="css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Alata" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alata|Abril+Fatface|Slabo+27px" rel="stylesheet">
     </head>
     <body>
         <main>
@@ -36,6 +37,14 @@
                         <h2>0</h2>
                     </div>
                 </div>
+                <div class="screen" id="weather">
+                    <h1 id="weatherClock">
+                        <span id="wHour">10</span>
+                        <span id="wSec">:</span>
+                        <span id="wMin">45</span>
+                    </h1>
+                    <h1 id="weatherCity">Queen City</h1>
+                </div>
             </div>
             <nav>
                 <button class="navButton" data-screen="0">C</button>
@@ -44,5 +53,7 @@
         </main>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/sugar.min.js"></script>
+    <script src="js/weather.min.js"></script>
     <script src="js/script.js"></script>
 </html>
