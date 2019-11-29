@@ -115,9 +115,14 @@ $(function() {
         
     }, 1000)
     
-    $.getJSON("https://api.openweathermap.org/data/2.5/weather?zip=28278,us&appid=2e6bb27c5e37162babaa1296a7e15938", function(data) {
+    var currentWeather;
+    
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather?zip=28278,us&units=imperial&appid=2e6bb27c5e37162babaa1296a7e15938", function(data) {
     //data is the JSON string
-        console.log(data.description);
+        currentWeather = data;
+        console.log(currentWeather);
+        $("#weatherTemp").html(Math.round(parseFloat(currentWeather.main.temp)) + "<sup> &deg;F</sup>");
+        $("#weatherIcon").attr("src", "http://openweathermap.org/img/wn/" + currentWeather.weather[0].icon + "@2x.png");
     });
 
 })

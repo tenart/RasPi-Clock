@@ -146,8 +146,33 @@ nav button {
     color: #ff4663;
 }
 
+#weatherTemp {
+    font-size: 150px;
+    font-family: "Dosis";
+    font-weight: 200;
+    position: absolute;
+    top: 220px;
+    left: 510px;
+}
+
+#weather sup {
+    font-size: 80px;
+    vertical-align: 50px;
+    color: #ff4663;
+}
+
+#weatherIcon {
+    position: absolute;
+    display: block;
+    height: 150px;
+    top: 220px;
+    left: 325px;
+    transform: scale(1.8)
+}
+
 /* CALENDAR SCREEN */
 
 #calendar {
     left: calc(960px * 2);
 }
+
