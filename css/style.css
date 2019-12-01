@@ -12,10 +12,10 @@ body {
 }
 
 main {
-    background: black;
     height: 640px;
     width: 960px;
     overflow: hidden;
+    box-shadow: 0 0 0 1px white;
 }
 
 nav {
@@ -125,7 +125,7 @@ nav button {
     font-family: "Slabo 27px";
     position: absolute;
     top: 70px;
-    left: 80px;
+    right: 80px;
 }
 
 #weatherClock span {
@@ -141,42 +141,90 @@ nav button {
 	font-size: 110px;
     font-family: "Abril Fatface";
     position: absolute;
-    left: 330px;
+    text-align: right;
+    left: 50px;
     top: 50px;
     color: #ff4663;
-}
-
-#weatherTemp {
-    font-size: 150px;
-    font-family: "Dosis";
-    font-weight: 200;
-    position: absolute;
-    top: 190px;
-    left: 510px;
-}
-
-#weather sup {
-    font-size: 80px;
-    vertical-align: 50px;
-    color: #ff4663;
-}
-
-#weatherIcon {
-    position: absolute;
-    display: block;
-    height: 150px;
-    top: 190px;
-    left: 325px;
-    transform: scale(1.8)
 }
 
 #weatherDesc {
 	font-size: 50px;
     font-family: "Alata";
     position: absolute;
-    top: 360px;
-    left: 325px;
-    
+    top: 200px;
+    left: 50px;
+    width: 800px;
+    text-align: left;
+}
+
+#weatherGroup {
+    position: absolute;
+    top: 300px;
+    left: 50px;
+}
+
+#weatherIcon {
+    display: inline-block;
+    height: 150px;
+    transform: scale(1.5);
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+#weatherTemp {
+    display: inline-block;
+    font-size: 100px;
+    font-family: "Dosis";
+    font-weight: 200;
+    vertical-align: middle;
+}
+
+#weather sup {
+    font-size: 50px;
+    vertical-align: 35px;
+    color: #ff4663;
+}
+
+.fcastGroup {
+    position: absolute;
+    top: 300px;
+    text-align: center;
+}
+
+.fcastIcon {
+    display: block;
+    height: 100px;
+    transform: scale(1.2);
+}
+
+.fcastTemp {
+    font-size: 40px;
+    font-family: "Dosis";
+    font-weight: 200;
+}
+
+#fcast1 {
+	left: 400px;
+}
+
+#fcast2 {
+	left: calc(400px + 140px);
+}
+
+#fcast3 {
+	left: calc(400px + 280px);
+}
+
+#fcast4 {
+	left: calc(400px + 420px);
+}
+
+#weatherGraph {
+	background: none;
+    position: absolute;
+    height: 640px;
+    width: 960px;
+    z-index: -1;
 }
 
 /* CALENDAR SCREEN */

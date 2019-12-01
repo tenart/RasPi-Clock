@@ -116,26 +116,61 @@ $(function() {
         setTimeout(function() {$("#s2").addClass("slideUp")}, 720);
         
     }, 1000)
-    
-    var wData;
+        
+    var currentTemp;
     
     $.getJSON("https://api.openweathermap.org/data/2.5/weather?zip=28278,us&units=imperial&appid=2e6bb27c5e37162babaa1296a7e15938", function(data) {
     //data is the JSON string
-        wData = data;
+        var wData = data;
         console.log(wData);
+        currentTemp = wData.main.temp;
         $("#weatherTemp").html(Math.round(parseFloat(wData.main.temp)) + "<sup> &deg;F</sup>");
         $("#weatherDesc").text(wData.weather[0].description);
         $("#weatherIcon").attr("src", "http://openweathermap.org/img/wn/" + wData.weather[0].icon + "@2x.png");
     });
-    /*
-    $.getJSON("https://api.openweathermap.org/data/2.5/weather?zip=28278,us&units=imperial&appid=2e6bb27c5e37162babaa1296a7e15938", function(data) {
+    
+    $.getJSON("https://api.openweathermap.org/data/2.5/forecast?zip=28278,us&units=imperial&appid=2e6bb27c5e37162babaa1296a7e15938", function(data) {
     //data is the JSON string
-        wData = data;
+        var wData = data;
         console.log(wData);
-        $("#weatherTemp").html(Math.round(parseFloat(wData.main.temp)) + "<sup> &deg;F</sup>");
-        $("#weatherDesc").text(wData.weather[0].description);
-        $("#weatherIcon").attr("src", "http://openweathermap.org/img/wn/" + wData.weather[0].icon + "@2x.png");
+        var temps = [Math.round(wData.list[0].main.temp),
+                    Math.round(wData.list[1].main.temp),
+                    Math.round(wData.list[2].main.temp),
+                    Math.round(wData.list[3].main.temp),
+                    Math.round(wData.list[4].main.temp)]
+        $("#fcast1 .fcastIcon").attr("src", "http://openweathermap.org/img/wn/" + wData.list[1].weather[0].icon + "@2x.png");
+        $("#fcast1 .fcastTemp").text( temps[1] );
+        $("#fcast1").css("transform", "translateY(" + ((currentTemp - temps[1]) * 3) + "px)");
+        
+        $("#fcast2 .fcastIcon").attr("src", "http://openweathermap.org/img/wn/" + wData.list[2].weather[0].icon + "@2x.png");
+        $("#fcast2 .fcastTemp").text( temps[2] );
+        $("#fcast2").css("transform", "translateY(" + ((currentTemp - temps[2]) * 3) + "px)");
+        
+        $("#fcast3 .fcastIcon").attr("src", "http://openweathermap.org/img/wn/" + wData.list[3].weather[0].icon + "@2x.png");
+        $("#fcast3 .fcastTemp").text( temps[3] );
+        $("#fcast3").css("transform", "translateY(" + ((currentTemp - temps[3]) * 3) + "px)");
+        
+        $("#fcast4 .fcastIcon").attr("src", "http://openweathermap.org/img/wn/" + wData.list[4].weather[0].icon + "@2x.png");
+        $("#fcast4 .fcastTemp").text( temps[4] );
+        $("#fcast4").css("transform", "translateY(" + ((currentTemp - temps[4]) * 3) + "px)");
+        
+        var ctx = document.getElementById("weatherGraph").getContext("2d");
+        ctx.beginPath();
+        
+        function drawGraph(yD, amp) {
+            ctx.moveTo(0, yD);
+            ctx.lineWidth = 4;
+            ctx.strokeStyle = "#fff";
+            ctx.bezierCurveTo(50, yD, 400, yD+(temps[0] - temps[1])*amp, 450, yD+(temps[0] - temps[1])*amp);
+            ctx.bezierCurveTo(500, yD+(temps[0] - temps[1])*amp, 540, yD+(temps[0] - temps[2])*amp, 590, yD+(temps[0] - temps[2])*amp);
+            ctx.bezierCurveTo(640, yD+(temps[0] - temps[2])*amp, 680, yD+(temps[0] - temps[3])*amp, 730, yD+(temps[0] - temps[3])*amp);
+            ctx.bezierCurveTo(780, yD+(temps[0] - temps[3])*amp, 910, yD+(temps[0] - temps[4])*amp, 960, yD+(temps[0] - temps[4])*amp);
+            ctx.stroke();
+        }
+        
+        drawGraph(480,3);
+            
     });
-    */
+    
 
 })
