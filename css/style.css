@@ -9,7 +9,7 @@
 body {
     overflow: hidden;
     /background: #000;
-    filter: invert();
+    -webkit-filter: invert();
 }
 
 main {
