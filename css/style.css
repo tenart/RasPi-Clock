@@ -8,7 +8,8 @@
 
 body {
     overflow: hidden;
-    background: black;
+    /background: #000;
+    filter: invert();
 }
 
 main {
@@ -121,8 +122,8 @@ nav button {
 }
 
 #weatherClock {
-	font-size: 90px;
-    font-family: "Slabo 27px";
+	font-size: 55px;
+    font-family: "Alata";
     position: absolute;
     top: 70px;
     right: 80px;
@@ -130,7 +131,7 @@ nav button {
 
 #weatherClock span {
     display: inline-block;
-	margin-right: -10px;
+    margin-left: -8px;
 }
 
 #wSec {
@@ -138,7 +139,7 @@ nav button {
 }
 
 #weatherCity {
-	font-size: 110px;
+	font-size: 80px;
     font-family: "Abril Fatface";
     position: absolute;
     text-align: right;
@@ -151,7 +152,7 @@ nav button {
 	font-size: 50px;
     font-family: "Alata";
     position: absolute;
-    top: 200px;
+    top: 170px;
     left: 50px;
     width: 800px;
     text-align: left;
@@ -159,7 +160,7 @@ nav button {
 
 #weatherGroup {
     position: absolute;
-    top: 300px;
+    top: 290px;
     left: 50px;
 }
 
@@ -187,7 +188,7 @@ nav button {
 
 .fcastGroup {
     position: absolute;
-    top: 290px;
+    top: 280px;
     text-align: center;
 }
 

@@ -105,7 +105,7 @@ $(function () {
                 ctx.bezierCurveTo(780, yD + (temps[0] - temps[3]) * amp, 910, yD + (temps[0] - temps[4]) * amp, 960, yD + (temps[0] - temps[4]) * amp);
                 ctx.stroke();
             }
-            drawGraph(490, 3, "#fff");
+            drawGraph(480, 3, "#fff");
             
         });
     }
