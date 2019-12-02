@@ -179,7 +179,7 @@ nav button {
     vertical-align: middle;
 }
 
-#weather sup {
+#weatherTemp sup {
     font-size: 50px;
     vertical-align: 35px;
     color: #ff4663;
@@ -187,8 +187,14 @@ nav button {
 
 .fcastGroup {
     position: absolute;
-    top: 300px;
+    top: 290px;
     text-align: center;
+}
+
+.fcastTime {
+    display: none;
+	font-size: 25px;
+    font-family: "Alata";
 }
 
 .fcastIcon {
@@ -198,9 +204,13 @@ nav button {
 }
 
 .fcastTemp {
-    font-size: 40px;
+    font-size: 50px;
     font-family: "Dosis";
-    font-weight: 200;
+    font-weight: bolder;
+}
+
+.fcastTemp > sup {
+    color: #ff4663;
 }
 
 #fcast1 {
