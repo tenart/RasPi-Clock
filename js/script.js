@@ -95,6 +95,7 @@ $(function () {
             ctx.beginPath();
 
             function drawGraph(yD, amp, color) {
+                ctx.clearRect(0, 0, 960, 640);
                 ctx.moveTo(0, yD);
                 ctx.lineWidth = 4;
                 ctx.strokeStyle = color;
