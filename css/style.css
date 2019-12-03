@@ -55,7 +55,29 @@ nav button {
     position: absolute;
 }
 
+.auxClock {
+	font-size: 55px;
+    font-family: "Alata";
+    position: fixed;
+    top: 70px;
+    right: 80px;
+    color: white;
+}
+
+.auxClock span {
+    display: inline-block;
+    margin-left: -8px;
+}
+
+.auxSc {
+	color: #ff4663;
+}
+
 /* CLOCK SCREEN */
+
+#clock {
+	background: black;
+}
 
 .digit {
     position: absolute;
@@ -121,24 +143,7 @@ nav button {
     left: 960px;
 }
 
-#weatherClock {
-	font-size: 55px;
-    font-family: "Alata";
-    position: absolute;
-    top: 70px;
-    right: 80px;
-}
-
-#weatherClock span {
-    display: inline-block;
-    margin-left: -8px;
-}
-
-#wSec {
-	color: #ff4663;
-}
-
-#weatherCity {
+#weatherTitle {
 	font-size: 80px;
     font-family: "Abril Fatface";
     position: absolute;
@@ -244,3 +249,42 @@ nav button {
     left: calc(960px * 2);
 }
 
+#calendarTitle {
+    display: none;
+    font-family: "Abril Fatface";
+	font-size: 80px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    color: #ff4663;
+}
+
+#calendarCard {
+	background: white;
+    width: 250px;
+    height: 470px;
+    left: 50px;
+    top: 50px;
+    position: absolute;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#calendarMonth {
+    text-transform: uppercase;
+	color: white;
+    background: #ff4663;
+    font-size: 35px;
+    font-family: "Alata";
+    padding: 15px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.69);
+    margin-bottom: 15px;
+}
+
+#calendarDate {
+    color: black;
+	font-family: "Dosis";
+    font-size: 80px;
+    margin-bottom: 15px;
+}

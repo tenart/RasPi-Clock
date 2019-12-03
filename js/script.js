@@ -136,9 +136,10 @@ $(function () {
         time.mn = doubleDigit(date.getMinutes());
         time.sc = doubleDigit(date.getSeconds());
 
-        $("#wHour").text(nonMilHr(time.hr));
-        $("#wMin").text(time.mn);
-        $("#wSec").css("opacity", 0);
+        $(".auxHr").text(nonMilHr(time.hr));
+        $(".auxMn").text(time.mn);
+        $(".auxSc").css("opacity", 0);
+        
         setTimeout(function () {
             $("#wSec").css("opacity", 1)
         }, 500)
