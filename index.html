@@ -1,108 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Clock lol</title>
-        <link type="text/css" rel="stylesheet" href="css/reset.css">
-        <link type="text/css" rel="stylesheet" href="css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Alata|Abril+Fatface|Slabo+27px|Dosis:200" rel="stylesheet">
+        <title>Raspberry Pi Clock</title>
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
         <main>
-            <div id="slider">
-                <h1 id="weatherClock" class="auxClock">
-                    <span id="wHour" class="auxHr">10</span>
-                    <span id="wSec" class="auxSc">:</span>
-                    <span id="wMin" class="auxMn">45</span>
-                </h1>
-                <div class="screen" id="clock">
-                    <div class="digit hour" id="h1">
-                        <h1>0</h1>
-                        <h2>0</h2>
-                    </div>
-                    <div class="digit hour" id="h2">
-                        <h1>0</h1>
-                        <h2>0</h2>
-                    </div>
-                    <div class="digit minute" id="m1">
-                        <h1>0</h1>
-                        <h2>0</h2>
-                    </div>
-                    <div class="digit minute" id="m2">
-                        <h1>0</h1>
-                        <h2>0</h2>
-                    </div>
-                    <div class="digit second" id="s1">
-                        <h1>0</h1>
-                        <h2>0</h2>
-                    </div>
-                    <div class="digit second" id="s2">
-                        <h1>0</h1>
-                        <h2>0</h2>
+            <div id="tile_overlay"></div>
+            <div id="home" class="screen">
+                <div id="clock">
+                    <div id="hour_a" class="hour clock_digit"></div>
+                    <div id="hour_b" class="hour clock_digit"></div>
+                    <div id="min_a" class="min clock_digit"></div>
+                    <div id="min_b" class="min clock_digit"></div>
+                    <div id="coins">
+                        <div id="coin_a" class="coin"></div>
+                        <div id="coin_b" class="coin"></div>
+                        <div id="coin_c" class="coin"></div>
+                        <div id="coin_d" class="coin"></div>
+                        <div id="coin_e" class="coin"></div>
+                        <div id="coin_f" class="coin"></div>
+                        <div id="coin_g" class="coin"></div>
+                        <div id="coin_h" class="coin"></div>
+                        <div id="coin_i" class="coin"></div>
+                        <div id="coin_j" class="coin"></div>
+                        <div id="coin_k" class="coin"></div>
+                        <div id="coin_l" class="coin"></div>
                     </div>
                 </div>
-                <div class="screen" id="weather">
-                    <h1 class="screenTitle" id="weatherTitle">Charlotte</h1>
-                    <h1 class="screenSub" id="weatherDesc">thunderstorm with heavy drizzle</h1>
-                    <div id="weatherGroup">
-                        <img id="weatherIcon" src="http://openweathermap.org/img/wn/10d@2x.png">
-                        <h1 id="weatherTemp">00</h1>
-                    </div>
-                    <div class="fcastGroup" id="fcast1">
-                        <h1 class="fcastTime">in 3 hrs</h1>
-                        <img class="fcastIcon" src="http://openweathermap.org/img/wn/10d@2x.png">
-                        <h1 class="fcastTemp">00</h1>
-                    </div>
-                    <div class="fcastGroup" id="fcast2">
-                        <h1 class="fcastTime">6</h1>
-                        <img class="fcastIcon" src="http://openweathermap.org/img/wn/10d@2x.png">
-                        <h1 class="fcastTemp">00</h1>
-                    </div>
-                    <div class="fcastGroup" id="fcast3">
-                        <h1 class="fcastTime">9</h1>
-                        <img class="fcastIcon" src="http://openweathermap.org/img/wn/10d@2x.png">
-                        <h1 class="fcastTemp">00</h1>
-                    </div>
-                    <div class="fcastGroup" id="fcast4">
-                        <h1 class="fcastTime">12</h1>
-                        <img class="fcastIcon" src="http://openweathermap.org/img/wn/10d@2x.png">
-                        <h1 class="fcastTemp">00</h1>
-                    </div>
-                    <canvas id="weatherGraph" width="960" height="640">
-                    
-                    </canvas>
-                </div>
-                <diav class="screen" id="calendar">
-                    <h1 class="screenTitle" id="calendarTitle">Monday</h1>
-                    <h1 class="screenSub" id="calendarDesc">Monday</h1>
-                    <div id="calendarCard">
-                        <h1 id="calendarMonth">Dec</h1>
-                        <h1 id="calendarDate">3</h1>
-                    </div>
-                    <div id="calendarWrapper">
-                        <h1>DECEMBER 2019</h1>
-                        <table>
-                            <tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
-                            <tr><td class="faded">25</td><td class="faded">26</td><td class="faded">27</td><td class="faded">28</td><td class="faded">29</td><td class="faded">30</td><td>1</td></tr>
-                            <tr><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
-                            <tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
-                            <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
-                            <tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
-                            <tr><td>30</td><td>31</td><td class="faded">1</td><td class="faded">2</td><td class="faded">3</td><td class="faded">4</td><td class="faded">5</td></tr>
-                        </table>
-                    </div>
-                </diav>
             </div>
-            <nav>
-                <button class="navButton" data-screen="0">Clk</button>
-                <button class="navButton" data-screen="1">Wthr</button>
-                <button class="navButton" data-screen="2">Cal</button>
-            </nav>
         </main>
     </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/sugar.min.js"></script>
-    <script src="js/weather.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
 </html>
