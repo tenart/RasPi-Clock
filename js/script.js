@@ -39,6 +39,10 @@ $(function() {
         element.css("background-image", bgname);
     }
 
+    $("#debug_refresh").click(function() {
+        location.reload(true);
+    })
+
     // UPDATE LOOP ONCE PER SECOND
     setInterval(function () {
         updateTime()

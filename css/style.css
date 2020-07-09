@@ -7,9 +7,25 @@
 }
 
 body {
-    background-color: black;
+    background-color: rgb(104, 104, 104);
     image-rendering: pixelated;
-    filter: invert();
+    /* filter: invert(); */
+}
+
+#debug_refresh {
+    background: black url(../res/reload.gif) no-repeat center center / calc(16 * 4px);
+    height: calc(4 * 8 * 4px);
+    width: calc(4 * 8 * 4px);
+    top: calc(2 * 8 * 4px);
+    left: calc(2 * 8 * 4px);
+    position: absolute;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#debug_refresh:hover {
+    opacity: 1;
 }
 
 main {
@@ -27,6 +43,7 @@ main {
     mix-blend-mode: difference;
     opacity: 0.2;
     z-index: 9999;
+    pointer-events: none;
     display: none;
 }
 
@@ -74,6 +91,7 @@ main {
     -webkit-mask-position: bottom;
     -webkit-mask-repeat: no-repeat;
     background-position: 0px calc(0 * 8 * 4px);
+    /* filter: invert(); */
 }
 
 #sec_a {
