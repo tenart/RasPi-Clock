@@ -1,0 +1,338 @@
+*:focus {
+    outline: none;
+}
+
+* {
+    user-select: none;
+}
+
+body {
+    overflow: hidden;
+    background: #000;
+    /* -webkit-filter: invert(); */
+}
+
+main {
+    height: 640px;
+    width: 960px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px white;
+}
+
+nav {
+    position: absolute;
+    width: 960px;
+    text-align: center;
+    height: 120px;
+    line-height: 90px;
+    top: calc(640px - 120px);
+}
+
+nav button {
+    height: 120px;
+    width: 200px;
+    margin: 0 10px;
+    background: none;
+    color: white;
+    border: 0;
+    font-size: 30px;
+}
+
+#slider {
+	height: 640px;
+    width: 1920px;
+    position: absolute;
+    transition: left 0.5s;
+    left: 0px;
+}
+
+.screen {
+	height: 640px;
+    width: 960px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 0;
+    position: absolute;
+}
+
+.auxClock {
+	font-size: 55px;
+    font-family: "Alata";
+    position: fixed;
+    top: 70px;
+    right: 50px;
+    color: white;
+}
+
+.auxClock span {
+    display: inline-block;
+    margin-left: -8px;
+}
+
+.auxSc {
+	color: #ff4663;
+}
+
+.screenTitle {
+	font-size: 80px;
+    font-family: "Abril Fatface";
+    position: absolute;
+    text-align: right;
+    left: 50px;
+    top: 50px;
+    color: #ff4663;
+}
+
+.screenSub {
+	font-size: 50px;
+    font-family: "Alata";
+    position: absolute;
+    top: 170px;
+    left: 50px;
+    width: 800px;
+    text-align: left;
+}
+
+/* CLOCK SCREEN */
+
+#clock {
+	background: black;
+}
+
+.digit {
+    position: absolute;
+    width: calc(960px/6);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    line-height: 640px;
+    box-shadow:  0 0 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+.second {
+	color: #ff4663;
+}
+
+/* .minute {
+	color: blue;
+} */
+
+#h2 {
+    left: 160px;
+}
+
+#m1 {
+    left: calc(160px*2);
+}
+
+#m2 {
+    left: calc(160px*3);
+}
+
+#s1 {
+    left: calc(160px*4);
+}
+
+#s2 {
+    left: calc(160px*5);
+}
+
+.slideUp {
+    animation: slideUp 0.3s;
+}
+
+@keyframes slideUp {
+    from {
+        margin-top: 0;
+    }
+    to {
+        margin-top: -640px;
+    }
+}
+
+.digit h1, .digit h2 {
+    font-family: "Alata";
+	font-size: 400px;
+    width: 300px;
+    margin-left: -70px;
+    text-align: center;
+}
+
+/* WEATHER SCREEN */
+
+#weather {
+    left: 960px;
+}
+
+#weatherGroup {
+    position: absolute;
+    top: 290px;
+    left: 50px;
+}
+
+#weatherIcon {
+    display: inline-block;
+    height: 150px;
+    transform: scale(1.5);
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+#weatherTemp {
+    display: inline-block;
+    font-size: 100px;
+    font-family: "Dosis";
+    font-weight: 200;
+    vertical-align: middle;
+}
+
+#weatherTemp sup {
+    font-size: 50px;
+    vertical-align: 35px;
+    color: #ff4663;
+}
+
+.fcastGroup {
+    position: absolute;
+    top: 280px;
+    text-align: center;
+}
+
+.fcastTime {
+    display: none;
+	font-size: 25px;
+    font-family: "Alata";
+}
+
+.fcastIcon {
+    display: block;
+    height: 100px;
+    transform: scale(1.2);
+}
+
+.fcastTemp {
+    font-size: 50px;
+    font-family: "Dosis";
+    font-weight: bolder;
+}
+
+.fcastTemp > sup {
+    color: #ff4663;
+}
+
+#fcast1 {
+	left: 400px;
+}
+
+#fcast2 {
+	left: calc(400px + 140px);
+}
+
+#fcast3 {
+	left: calc(400px + 280px);
+}
+
+#fcast4 {
+	left: calc(400px + 420px);
+}
+
+#weatherGraph {
+	background: none;
+    position: absolute;
+    height: 640px;
+    width: 960px;
+    z-index: -1;
+}
+
+/* CALENDAR SCREEN */
+
+#calendar {
+    left: calc(960px * 2);
+}
+
+/* #calendarTitle {
+
+} */
+
+#calendarDesc {
+	display: none
+}
+
+#calendarCard {
+    width: 160px;
+    height: 210px;
+    left: 50px;
+    top: 170px;
+    position: absolute;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: inset 0 0 0 4px white;
+    background: white;
+}
+
+#calendarMonth {
+    text-transform: uppercase;
+	color: white;
+    background: #ff4663;
+    font-size: 35px;
+    font-family: "Alata";
+    padding: 15px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.69);
+    margin-bottom: 15px;
+}
+
+#calendarDate {
+    color: black;
+	font-family: "Dosis";
+    font-weight: bolder;
+    font-size: 80px;
+    line-height: 110px;
+}
+
+#calendarWrapper {
+    border-radius: 15px;
+    width: 650px;
+    top: 170px;
+    left: 260px;
+    position: absolute;
+    overflow: hidden;
+}
+
+#calendarWrapper h1 {
+	text-transform: uppercase;
+	color: #ff4663;
+    font-size: 35px;
+    font-family: "Alata";
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 0 4px #ff4663;
+    text-align: center;
+    display: none;
+}
+
+#calendarWrapper table {
+	width: 650px;
+    font-size: 35px;
+}
+
+#calendarWrapper th {
+	text-transform: uppercase;
+	color: #ff4663;
+    font-size: 20px;
+    font-family: "Alata";
+    text-align: center;
+    height: 30px;
+    width: calc(650px/7);
+}
+
+#calendarWrapper td {
+    font-family: "Dosis";
+	text-align: center;
+    vertical-align: middle;
+    height: 55px;
+}
+
+.faded {
+	opacity: 0.4;
+    font-size: 25px;
+}

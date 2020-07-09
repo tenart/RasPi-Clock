@@ -12,7 +12,7 @@ body {
 }
 
 main {
-    background-color: white;
+    background: white url(../res/bg_stripes.gif) top left / 24px;
     height: 960px; /* 240x 4p  */
     width: 640px; /*  160x 4p */
     font-size: 0;
@@ -24,24 +24,27 @@ main {
     position: absolute;
     background: url(../res/tile_overlay.gif) center / 100%;
     mix-blend-mode: difference;
-    opacity: 0.05;
+    opacity: 0.2;
     z-index: 9999;
     display: none;
 }
 
 .screen {
     position: relative;
-    background-color: white;
     height: 100%;
     width: 100%;
     font-size: 0;
 }
 
 #clock {
-    width: calc(7 * 8 * 4px);
+    width: calc(10 * 8 * 4px);
+    height: calc(16 * 8 * 4px);
+    padding: calc(1.5 * 8 * 4px);
+    top: calc(7 * 8 * 4px);
+    left: calc(5 * 8 * 4px);
+    background-color: white;
     position: absolute;
-    top: calc(8.5 * 8 * 4px);
-    left: calc(6.5 * 8 * 4px);
+    border-radius: 12px;
 }
 
 .clock_digit {
@@ -59,7 +62,13 @@ main {
     margin-right: calc(8 * 4px);
 }
 
+#mask_test {
+    position: absolute;
+    mask: url(#hour_a);
+}
+
 #coins {
+    display: none;
     height: calc((20 + 4) * 4px);
     width: calc((68 + 4) * 4px);
     margin-left: calc(-6 * 4px);
