@@ -45,17 +45,23 @@ $(function() {
         updateNumBackground( $("#hour_a"), nonMilHr(time.hr).substring(0,1), "big_" ) ;
         updateNumBackground( $("#hour_b"), nonMilHr(time.hr).substring(1,2), "big_" ) ;
         updateNumBackground( $("#min_a"), time.mn.substring(0,1), "big_" ) ;
-        updateNumBackground( $("#min_b"), time.mn.substring(1,2), "big_" ) ;   
-
-        for( i = 0; i < 12; i++) {
-            if( time.sc >= 5 * i) {
-                $(".coin:nth-child(" + (i + 1) + ")").addClass("active");
-            } else {
-                $(".coin:nth-child(" + (i + 1) + ")").removeClass("active");
-            }
-        } 
+        updateNumBackground( $("#min_b"), time.mn.substring(1,2), "big_" ) ;
+        $("#sec_a").css("mask-image", "url(res/big_" + time.mn.substring(0,1) + ".gif)");
+        $("#sec_b").css("mask-image", "url(res/big_" + time.mn.substring(1,2) + ".gif)");
+        $(".sec").css("background-position", "0px " + (56 * 4 - (time.sc / 60 * 56 * 4)) + "px" )
+        if(time.sc == 59) {
+            $(".sec").fadeOut(1000).fadeIn(0);
+        }
+        
+        // for( i = 0; i < 12; i++) {
+        //     if( time.sc >= 5 * i) {
+        //         $(".coin:nth-child(" + (i + 1) + ")").addClass("active");
+        //     } else {
+        //         $(".coin:nth-child(" + (i + 1) + ")").removeClass("active");
+        //     }
+        // } 
         
         console.log(nonMilHr(time.hr) + " " + time.mn + " " + time.sc);
-    }, 500)
+    }, 1000)
 })   
    

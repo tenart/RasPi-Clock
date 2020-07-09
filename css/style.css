@@ -44,7 +44,6 @@ main {
     left: calc(5 * 8 * 4px);
     background-color: white;
     position: absolute;
-    border-radius: 12px;
 }
 
 .clock_digit {
@@ -62,11 +61,30 @@ main {
     margin-right: calc(8 * 4px);
 }
 
-#mask_test {
+.sec {
+    width: calc(3 * 8 *4px);
+    height: calc(7 * 8 * 4px);
+    background: url(../res/red_fill.gif) no-repeat top left / calc(3 * 8 * 4px) calc(7 * 8 * 4px);
     position: absolute;
-    mask: url(#hour_a);
+    mask-size: calc(3 * 8 *4px) calc(6 * 8 * 4px);
+    mask-position: bottom;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: calc(3 * 8 *4px) calc(6 * 8 * 4px);
+    -webkit-mask-position: bottom;
+    -webkit-mask-repeat: no-repeat;
+    background-position: 0px calc(0 * 8 * 4px);
 }
 
+#sec_a {
+    margin-top: calc(-7 * 8 * 4px);;
+}
+
+#sec_b {
+    margin-left: calc(4 * 8 *4px);;
+    margin-top: calc(-7 * 8 * 4px);
+}
+
+/* 
 #coins {
     display: none;
     height: calc((20 + 4) * 4px);
@@ -102,4 +120,4 @@ main {
     100% {
         transform: translateY(0px);
     }
-}
+} */
