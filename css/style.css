@@ -54,14 +54,21 @@ main {
     font-size: 0;
 }
 
+.white_box {
+    background-color: white;
+    position: absolute;
+}
+
+#clock_wrapper {
+    top: calc(4 * 8 * 4px);
+    left: calc(5 * 8 * 4px);
+    position: absolute;
+}
+
 #clock {
     width: calc(10 * 8 * 4px);
     height: calc(16 * 8 * 4px);
     padding: calc(1.5 * 8 * 4px);
-    top: calc(7 * 8 * 4px);
-    left: calc(5 * 8 * 4px);
-    background-color: white;
-    position: absolute;
 }
 
 .clock_digit {
@@ -103,40 +110,8 @@ main {
     margin-top: calc(-7 * 8 * 4px);
 }
 
-/* 
-#coins {
-    display: none;
-    height: calc((20 + 4) * 4px);
-    width: calc((68 + 4) * 4px);
-    margin-left: calc(-6 * 4px);
-    margin-top: calc(1.5 * 8 * 4px);
+#info {
+    height: calc(4 * 8 * 4px);
+    width: calc(10 * 8 * 4px);
+    top: calc(18 * 8 * 4px);
 }
-
-.coin {
-    height: calc(8 * 4px);
-    width: calc(8 * 4px);
-    background: url(../res/dot.gif) center / 100%;
-    display: inline-block;
-    margin-right: calc(4 * 4px);
-    margin-bottom: calc(4 * 4px);
-}
-
-.coin.active {
-    background: url(../res/coin_spin.gif) center / 100%;
-    animation: jump 0.5s;
-}
-
-@keyframes jump {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-16px);
-    }
-    80% {
-        transform: translateY(8px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-} */

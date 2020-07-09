@@ -57,14 +57,6 @@ $(function() {
             $(".sec").fadeOut(1000).fadeIn(0);
         }
         
-        // for( i = 0; i < 12; i++) {
-        //     if( time.sc >= 5 * i) {
-        //         $(".coin:nth-child(" + (i + 1) + ")").addClass("active");
-        //     } else {
-        //         $(".coin:nth-child(" + (i + 1) + ")").removeClass("active");
-        //     }
-        // } 
-        
         console.log(nonMilHr(time.hr) + " " + time.mn + " " + time.sc);
     }, 1000)
 })   
