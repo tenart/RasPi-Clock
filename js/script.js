@@ -21,7 +21,7 @@ $(function() {
         if (parseInt(input) > 12) {
             return doubleDigit(parseInt(input) - 12);
         } else if (parseInt(input) == 0) {
-            return "01";
+            return "12";
         } else {
             return doubleDigit(input);
         }
