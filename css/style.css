@@ -29,7 +29,7 @@ body {
 }
 
 main {
-    background: white url(../res/bg_stripes.gif) top left / 24px;
+    background: white url(../res/bg_dots.gif) top left / 16px;
     height: 960px; /* 240x 4p  */
     width: 640px; /*  160x 4p */
     font-size: 0;
@@ -89,7 +89,7 @@ main {
 .sec {
     width: calc(3 * 8 *4px);
     height: calc(7 * 8 * 4px);
-    background: url(../res/red_fill.gif) no-repeat top left / calc(3 * 8 * 4px) calc(7 * 8 * 4px);
+    background: url(../res/blue_fill.gif) no-repeat top left / calc(3 * 8 * 4px) calc(7 * 8 * 4px);
     position: absolute;
     mask-size: calc(3 * 8 *4px) calc(6 * 8 * 4px);
     mask-position: bottom;

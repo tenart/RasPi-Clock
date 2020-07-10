@@ -15,7 +15,7 @@ $(function() {
         } else {
             return input.toString();
         }
-    }
+    };
 
     function nonMilHr(input) {
         if (parseInt(input) > 12) {
@@ -25,39 +25,43 @@ $(function() {
         } else {
             return doubleDigit(input);
         }
-    }
+    };
 
     function updateTime() {
         date = new Date();
         time.hr = doubleDigit(date.getHours());
         time.mn = doubleDigit(date.getMinutes());
         time.sc = doubleDigit(date.getSeconds());
-    }
+    };
 
     function updateNumBackground(element, number, prefix) {
         var bgname = "url(res/" + prefix + number + ".gif)";
         element.css("background-image", bgname);
-    }
+    };
 
     $("#debug_refresh").click(function() {
         location.reload(true);
-    })
+    });
 
     // UPDATE LOOP ONCE PER SECOND
     setInterval(function () {
-        updateTime()
-        updateNumBackground( $("#hour_a"), nonMilHr(time.hr).substring(0,1), "big_" ) ;
-        updateNumBackground( $("#hour_b"), nonMilHr(time.hr).substring(1,2), "big_" ) ;
-        updateNumBackground( $("#min_a"), time.mn.substring(0,1), "big_" ) ;
-        updateNumBackground( $("#min_b"), time.mn.substring(1,2), "big_" ) ;
+        updateTime();
+        updateNumBackground( $("#hour_a"), nonMilHr(time.hr).substring(0,1), "big_" );
+        updateNumBackground( $("#hour_b"), nonMilHr(time.hr).substring(1,2), "big_" );
+        updateNumBackground( $("#min_a"), time.mn.substring(0,1), "big_" );
+        updateNumBackground( $("#min_b"), time.mn.substring(1,2), "big_" );
         $("#sec_a").css("mask-image", "url(res/big_" + time.mn.substring(0,1) + ".gif)");
         $("#sec_b").css("mask-image", "url(res/big_" + time.mn.substring(1,2) + ".gif)");
-        $(".sec").css("background-position", "0px " + (56 * 4 - (time.sc / 60 * 56 * 4)) + "px" )
+        $(".sec").css("background-position", "0px " + (56 * 4 - (time.sc / 60 * 56 * 4)) + "px" );
         if(time.sc == 59) {
             $(".sec").fadeOut(1000).fadeIn(0);
-        }
+            setTimeout(function() {
+                
+                $(".sec").css("filter", "hue-rotate(" + (Math.random() * 360) + "deg)");
+            }, 1000);
+        };
         
         console.log(nonMilHr(time.hr) + " " + time.mn + " " + time.sc);
-    }, 1000)
+    }, 1000);
 })   
    
